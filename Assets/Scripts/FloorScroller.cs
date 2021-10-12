@@ -17,6 +17,7 @@ public class FloorScroller : MonoBehaviour
     void Update()
     {
         float posZ = Mathf.Round((StageController.I.transform.position.z - basePos.z) / areaSizeZ);
+        
         Vector3 nowPos = transform.position;
         nowPos.z = areaSizeZ * posZ + basePos.z;
         transform.position = nowPos;
