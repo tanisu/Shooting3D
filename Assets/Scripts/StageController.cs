@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StageController : MonoBehaviour
 {
+    [SerializeField] public ObjectPool playerBulletPool = default;
     [SerializeField] public PlayerController playerCtrl = default;
     private float stageSpeed = 1;
     private static StageController i;
@@ -27,7 +28,10 @@ public class StageController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
         playerCtrl.Move(new Vector3(x, 0, z));
-
+        if (Input.GetButton("Fire1"))
+        {
+            playerCtrl.Shot();
+        }
 
 
     }

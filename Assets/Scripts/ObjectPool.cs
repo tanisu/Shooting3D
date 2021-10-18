@@ -18,7 +18,6 @@ public class ObjectPool : MonoBehaviour
             tmpObj.transform.parent = transform;
             tmpObj.transform.localPosition = new Vector3(100, 0, -100);
             objQueue.Enqueue(tmpObj);
-            
         }
     }
 
@@ -41,6 +40,11 @@ public class ObjectPool : MonoBehaviour
     {
         _obj.gameObject.SetActive(false);
         objQueue.Enqueue(_obj);
+    }
+
+    public void ResetAll()
+    {
+        BroadcastMessage("HideFromStage", SendMessageOptions.DontRequireReceiver);
     }
 
 }
