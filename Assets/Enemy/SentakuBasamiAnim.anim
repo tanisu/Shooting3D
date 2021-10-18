@@ -224,21 +224,21 @@ AnimationClip:
   - time: 1.5
     functionName: Shot
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11400000, guid: 58b7bf5ea1a72ed429bab6e0f7a7001f, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2
     functionName: Shot
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11400000, guid: e6858434a65b06d4f87a0677b890009e, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.5
     functionName: Shot
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11400000, guid: e36c0cf6c1552e64cbc0f7ac24e64085, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
