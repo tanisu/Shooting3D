@@ -6,6 +6,7 @@ public class StageController : MonoBehaviour
 {
     [SerializeField] public ObjectPool playerBulletPool = default;
     [SerializeField] public PlayerController playerCtrl = default;
+    [SerializeField] public ObjectPool enemyBulletPool = default;
     private float stageSpeed = 1;
     private static StageController i;
     public static StageController I { get => i; }
