@@ -7,7 +7,12 @@ public class StageController : MonoBehaviour
     [SerializeField] public ObjectPool playerBulletPool = default;
     [SerializeField] public PlayerController playerCtrl = default;
     [SerializeField] public ObjectPool enemyBulletPool = default;
-    private float stageSpeed = 1;
+    [SerializeField] public Transform enemyPool = default;
+    [SerializeField] private StageSequencer sequencer = default;
+
+    public float stageSpeed = 1;
+    private float stageProggressTime = 0;
+
     private static StageController i;
     public static StageController I { get => i; }
 
@@ -19,12 +24,15 @@ public class StageController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sequencer.Load();
+        sequencer.Reset();
+        stageProggressTime = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        sequencer.Step(stageProggressTime);
+        stageProggressTime += Time.deltaTime;
         transform.Translate(Vector3.forward * Time.deltaTime * stageSpeed);
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
