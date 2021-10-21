@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1726694914412863036, guid: 3c4b3332db747f6479fa7b2c32b20256, type: 3}
+      propertyPath: hitPoint
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3312580990543373858, guid: 3c4b3332db747f6479fa7b2c32b20256, type: 3}
       propertyPath: m_Size.x
       value: 0.3454481

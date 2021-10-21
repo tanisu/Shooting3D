@@ -7,12 +7,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int hitPoint = 1;
     private Material flashMaterial = null;
     private ObjectPool bulletPool;
+    private ObjectPool explosionPool;
 
     void Start()
     {
         flashMaterial = transform.GetComponentsInChildren<Renderer>()[0].material;
         flashMaterial.EnableKeyword("_EMISSION");
         bulletPool = StageController.I.enemyBulletPool;
+        explosionPool = StageController.I.explosionPool;
     }
 
     public void HideFromStage()
@@ -35,6 +37,7 @@ public class Enemy : MonoBehaviour
             hitPoint -= 1;
             if(hitPoint <= 0)
             {
+                explosionPool.Launch(transform.position, 0).GetComponent<ExplosionParticle>().PlayParticle();
                 HideFromStage();
             }
             else

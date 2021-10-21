@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1726694914412863036, guid: 3c4b3332db747f6479fa7b2c32b20256, type: 3}
+      propertyPath: hitPoint
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6301926564219158634, guid: 3c4b3332db747f6479fa7b2c32b20256, type: 3}
       propertyPath: m_Name
       value: gamute-pu_L

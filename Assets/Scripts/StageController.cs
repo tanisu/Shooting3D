@@ -8,6 +8,8 @@ public class StageController : MonoBehaviour
     [SerializeField] public PlayerController playerCtrl = default;
     [SerializeField] public ObjectPool enemyBulletPool = default;
     [SerializeField] public Transform enemyPool = default;
+    [SerializeField] public ObjectPool explosionPool = default;
+
     [SerializeField] private StageSequencer sequencer = default;
 
     public float stageSpeed = 1;
