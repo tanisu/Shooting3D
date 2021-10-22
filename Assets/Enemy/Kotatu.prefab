@@ -95,7 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00eb292f9d3aff4182d51ef5f30287f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 100
+  hitPoint: 10
+  isBoss: 1
+  scorePoint: 100
 --- !u!1001 &8421222726887008025
 PrefabInstance:
   m_ObjectHideFlags: 0

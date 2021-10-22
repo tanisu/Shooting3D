@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int hitPoint = 1;
+    [SerializeField] bool isBoss = false;
+    [SerializeField] int scorePoint = 0;
     private Material flashMaterial = null;
     private ObjectPool bulletPool;
     private ObjectPool explosionPool;
@@ -32,11 +34,14 @@ public class Enemy : MonoBehaviour
     {
         if (_other.CompareTag("PlayerBullet"))
         {
+            
             PoolContent poolObj = _other.GetComponent<PoolContent>();
             poolObj.HideFromStage();
             hitPoint -= 1;
             if(hitPoint <= 0)
             {
+                StageController.I.isStageBossDead = isBoss;
+                StageController.I.AddScore(scorePoint);
                 explosionPool.Launch(transform.position, 0).GetComponent<ExplosionParticle>().PlayParticle();
                 HideFromStage();
             }

@@ -7,8 +7,17 @@ public class PlayerController : MonoBehaviour
 
     private ObjectPool bulletPool;
     private float shootInterval = 0;
+    public bool isDead;
 
-    
+    private Vector3 restartPos;
+    private Vector3 restartRot;
+
+    private void Awake()
+    {
+        restartPos = transform.localPosition;
+        restartRot = transform.localEulerAngles;
+    }
+
     void Start()
     {
         bulletPool = StageController.I.playerBulletPool;
@@ -37,5 +46,28 @@ public class PlayerController : MonoBehaviour
             if (obj != null) obj.GetComponent <BulletMoving>().speed = 10 ;
             shootInterval = 0.1f;
         }
+    }
+
+    private void OnTriggerEnter(Collider _other)
+    {
+        if (_other.CompareTag("EnemyBullet"))
+        {
+            _other.GetComponent<PoolContent>().HideFromStage();
+            isDead = true;
+        }
+    }
+
+    public void SetupForPlay()
+    {
+        shootInterval = 0;
+        isDead = false;
+        transform.localPosition = new Vector3(0, 0, -3.5f);
+        transform.localEulerAngles = new Vector3(0, 0, 0);
+    }
+
+    public void SetUpForTitle()
+    {
+        transform.localPosition = restartPos;
+        transform.localEulerAngles = restartRot;
     }
 }

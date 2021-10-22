@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoint: 2
+  isBoss: 0
+  scorePoint: 18
 --- !u!54 &7658552472339434865
 Rigidbody:
   m_ObjectHideFlags: 0
